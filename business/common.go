@@ -15,6 +15,11 @@ type CommonResponse struct {
 	Msg          string `json:"msg,omitempty"`
 }
 
+func (cr *CommonResponse) Set(code int, msg string) {
+	cr.StatusCode = code
+	cr.Msg = msg
+}
+
 func (cr CommonResponse) CommonResp() CommonResponse {
 	return cr
 }
